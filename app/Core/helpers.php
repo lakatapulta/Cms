@@ -246,3 +246,75 @@ if (!function_exists('now')) {
         return new \DateTime();
     }
 }
+
+if (!function_exists('cache')) {
+    /**
+     * Get cache service
+     */
+    function cache() {
+        return app('cache');
+    }
+}
+
+if (!function_exists('backup')) {
+    /**
+     * Get backup service
+     */
+    function backup() {
+        return app('backup');
+    }
+}
+
+if (!function_exists('analytics')) {
+    /**
+     * Get analytics service
+     */
+    function analytics() {
+        return app('analytics');
+    }
+}
+
+if (!function_exists('forms')) {
+    /**
+     * Get form builder service
+     */
+    function forms() {
+        return app('forms');
+    }
+}
+
+if (!function_exists('integrations')) {
+    /**
+     * Get integration service
+     */
+    function integrations() {
+        return app('integrations');
+    }
+}
+
+if (!function_exists('notify')) {
+    /**
+     * Send notification
+     */
+    function notify($type, $data, $channels = ['email'], $users = null) {
+        return app('notifications')->send($type, $data, $channels, $users);
+    }
+}
+
+if (!function_exists('media')) {
+    /**
+     * Get media service
+     */
+    function media() {
+        return app('media');
+    }
+}
+
+if (!function_exists('seo')) {
+    /**
+     * Get SEO service
+     */
+    function seo() {
+        return app('seo');
+    }
+}

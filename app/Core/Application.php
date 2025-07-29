@@ -144,6 +144,31 @@ class Application extends Container
         $this->singleton('media', function ($app) {
             return new \FlexCMS\Services\MediaService();
         });
+
+        // Backup service
+        $this->singleton('backup', function ($app) {
+            return new \FlexCMS\Services\BackupService();
+        });
+
+        // Analytics service
+        $this->singleton('analytics', function ($app) {
+            return new \FlexCMS\Services\AnalyticsService();
+        });
+
+        // Form builder service
+        $this->singleton('forms', function ($app) {
+            return new \FlexCMS\Services\FormBuilderService();
+        });
+
+        // Integration service
+        $this->singleton('integrations', function ($app) {
+            return new \FlexCMS\Services\IntegrationService();
+        });
+
+        // Notification service
+        $this->singleton('notifications', function ($app) {
+            return new \FlexCMS\Services\NotificationService();
+        });
     }
 
     /**
