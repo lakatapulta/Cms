@@ -129,6 +129,21 @@ class Application extends Container
         $this->singleton('roles', function ($app) {
             return new \FlexCMS\Services\RoleService();
         });
+
+        // Cache service
+        $this->singleton('cache', function ($app) {
+            return new \FlexCMS\Services\CacheService();
+        });
+
+        // SEO service
+        $this->singleton('seo', function ($app) {
+            return new \FlexCMS\Services\SeoService();
+        });
+
+        // Media service
+        $this->singleton('media', function ($app) {
+            return new \FlexCMS\Services\MediaService();
+        });
     }
 
     /**
