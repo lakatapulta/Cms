@@ -1,0 +1,37 @@
+{
+    "name": "Default Theme",
+    "description": "FlexCMS default theme with modern design",
+    "version": "1.0.0",
+    "author": "FlexCMS Team",
+    "screenshot": "screenshot.png",
+    "supports": [
+        "menus",
+        "widgets",
+        "post-thumbnails",
+        "custom-headers",
+        "custom-backgrounds"
+    ],
+    "template_parts": [
+        "header",
+        "footer",
+        "sidebar",
+        "navigation"
+    ],
+    "customizer": {
+        "colors": {
+            "primary": "#007cba",
+            "secondary": "#6c757d",
+            "success": "#28a745",
+            "danger": "#dc3545"
+        },
+        "typography": {
+            "font_family": "Inter, sans-serif",
+            "font_size": "16px",
+            "line_height": "1.6"
+        },
+        "layout": {
+            "container_width": "1200px",
+            "sidebar_width": "300px"
+        }
+    }
+}
