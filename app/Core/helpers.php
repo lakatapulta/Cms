@@ -168,3 +168,81 @@ if (!function_exists('logger')) {
         return $logger->info($message, $context);
     }
 }
+
+if (!function_exists('auth')) {
+    /**
+     * Get authentication service
+     */
+    function auth() {
+        return app('auth');
+    }
+}
+
+if (!function_exists('user')) {
+    /**
+     * Get authenticated user
+     */
+    function user() {
+        return auth()->user();
+    }
+}
+
+if (!function_exists('user_can')) {
+    /**
+     * Check if user has permission
+     */
+    function user_can($permission, $user = null) {
+        $user = $user ?: user();
+        return $user ? app('roles')->userCan($user, $permission) : false;
+    }
+}
+
+if (!function_exists('user_has_role')) {
+    /**
+     * Check if user has role
+     */
+    function user_has_role($role, $user = null) {
+        $user = $user ?: user();
+        return $user ? app('roles')->userHasRole($user, $role) : false;
+    }
+}
+
+if (!function_exists('is_admin')) {
+    /**
+     * Check if user is admin
+     */
+    function is_admin($user = null) {
+        $user = $user ?: user();
+        return $user ? app('roles')->isAdmin($user) : false;
+    }
+}
+
+if (!function_exists('csrf_token')) {
+    /**
+     * Generate CSRF token
+     */
+    function csrf_token() {
+        if (!isset($_SESSION['csrf_token'])) {
+            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+        }
+        return $_SESSION['csrf_token'];
+    }
+}
+
+if (!function_exists('csrf_field')) {
+    /**
+     * Generate CSRF input field
+     */
+    function csrf_field() {
+        return '<input type="hidden" name="_token" value="' . csrf_token() . '">';
+    }
+}
+
+if (!function_exists('now')) {
+    /**
+     * Get current datetime
+     */
+    function now() {
+        return new \DateTime();
+    }
+}

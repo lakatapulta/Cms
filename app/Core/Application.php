@@ -119,6 +119,16 @@ class Application extends Container
         $this->singleton('view', function ($app) {
             return new ViewEngine($app);
         });
+
+        // Authentication service
+        $this->singleton('auth', function ($app) {
+            return new \FlexCMS\Services\AuthService();
+        });
+
+        // Role service
+        $this->singleton('roles', function ($app) {
+            return new \FlexCMS\Services\RoleService();
+        });
     }
 
     /**
